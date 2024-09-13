@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://t147xpdu3mku"]
+[gd_scene load_steps=2 format=3 uid="uid://t147xpdu3mku"]
+
+[ext_resource type="FontFile" uid="uid://b6kihnueyk8x8" path="res://font/consola.ttf" id="1_ra3su"]
 
 [node name="textadventure" type="Node2D"]
+
+[node name="message enter" type="TextEdit" parent="."]
+offset_left = 25.0
+offset_top = 530.0
+offset_right = 775.0
+offset_bottom = 570.0
+theme_override_colors/word_highlighted_color = Color(0, 1, 1, 1)
+theme_override_colors/current_line_color = Color(0, 0, 0, 1)
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0.290196, 0.00392157, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("1_ra3su")
+theme_override_font_sizes/font_size = 16
+placeholder_text = "enter message"
