@@ -1,96 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://t147xpdu3mku"]
+[gd_scene load_steps=4 format=3 uid="uid://t147xpdu3mku"]
 
-[ext_resource type="FontFile" uid="uid://b6kihnueyk8x8" path="res://font/consola.ttf" id="1_ra3su"]
-[ext_resource type="FontFile" uid="uid://cn8ruasoji84d" path="res://font/consolai.ttf" id="2_np22b"]
-[ext_resource type="FontFile" uid="uid://cu1hessgtg3nn" path="res://font/consolaz.ttf" id="3_fmkon"]
-[ext_resource type="FontFile" uid="uid://c1c6rr28xy14k" path="res://font/consolab.ttf" id="4_qs2md"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5oxs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4d5b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b27t6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efhrv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h12uh"]
+[ext_resource type="PackedScene" uid="uid://xn177w5ceh24" path="res://branches/messageenterprefix.tscn" id="1_rmy5g"]
+[ext_resource type="PackedScene" uid="uid://cf0dbku0qc48l" path="res://branches/message_enter.tscn" id="2_iwcdp"]
+[ext_resource type="PackedScene" uid="uid://b7s1i4endmi6n" path="res://branches/textdisplay.tscn" id="3_nyod6"]
 
 [node name="textadventure" type="Node2D"]
 
-[node name="messageenterprefix" type="LineEdit" parent="."]
-offset_left = 32.0
-offset_top = 530.0
-offset_right = 67.1875
-offset_bottom = 570.0
-theme_override_colors/selection_color = Color(0, 0, 1, 1)
-theme_override_colors/caret_color = Color(0, 1, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0.290196, 0.00392157, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("1_ra3su")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxEmpty_m5oxs")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_e4d5b")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_b27t6")
-text = ">"
-editable = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-caret_blink = true
-caret_blink_interval = 0.75
+[node name="messageenterprefix" parent="." instance=ExtResource("1_rmy5g")]
 
-[node name="message enter" type="LineEdit" parent="."]
-offset_left = 50.0
-offset_top = 530.0
-offset_right = 768.0
-offset_bottom = 570.0
-theme_override_colors/selection_color = Color(0, 0, 1, 1)
-theme_override_colors/caret_color = Color(0, 1, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0.290196, 0.00392157, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("1_ra3su")
-theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxEmpty_m5oxs")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_e4d5b")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_b27t6")
-placeholder_text = "enter message"
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-caret_blink = true
-caret_blink_interval = 1.0
-metadata/_edit_use_anchors_ = true
+[node name="message enter" parent="." instance=ExtResource("2_iwcdp")]
 
-[node name="textdisplay" type="RichTextLabel" parent="."]
-offset_left = 32.0
-offset_top = 24.0
-offset_right = 768.0
-offset_bottom = 497.0
-theme_override_colors/default_color = Color(0, 1, 0, 1)
-theme_override_colors/selection_color = Color(0, 0, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_fonts/normal_font = ExtResource("1_ra3su")
-theme_override_fonts/mono_font = ExtResource("1_ra3su")
-theme_override_fonts/italics_font = ExtResource("2_np22b")
-theme_override_fonts/bold_italics_font = ExtResource("3_fmkon")
-theme_override_fonts/bold_font = ExtResource("4_qs2md")
-theme_override_font_sizes/bold_italics_font_size = 16
-theme_override_font_sizes/italics_font_size = 16
-theme_override_font_sizes/mono_font_size = 16
-theme_override_font_sizes/normal_font_size = 16
-theme_override_font_sizes/bold_font_size = 16
-theme_override_styles/fill = SubResource("StyleBoxEmpty_efhrv")
-theme_override_styles/background = SubResource("StyleBoxEmpty_h12uh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_m5oxs")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_b27t6")
-bbcode_enabled = true
-text = "hello this is a test things. thing.ok?"
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-metadata/_edit_use_anchors_ = true
+[node name="textdisplay" parent="." instance=ExtResource("3_nyod6")]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://xn177w5ceh24"]
+
+[ext_resource type="FontFile" uid="uid://b6kihnueyk8x8" path="res://font/consola.ttf" id="1_u4lsj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5oxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4d5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b27t6"]
+
+[node name="messageenterprefix" type="LineEdit"]
+offset_left = 32.0
+offset_top = 530.0
+offset_right = 67.1875
+offset_bottom = 570.0
+theme_override_colors/selection_color = Color(0, 0, 1, 1)
+theme_override_colors/caret_color = Color(0, 1, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0.290196, 0.00392157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_u4lsj")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m5oxs")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_e4d5b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b27t6")
+text = ">"
+editable = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+caret_blink = true
+caret_blink_interval = 0.75
