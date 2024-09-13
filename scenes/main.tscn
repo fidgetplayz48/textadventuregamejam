@@ -1,3 +1,3 @@
 [gd_scene format=3 uid="uid://t147xpdu3mku"]
 
-[node name="text adventure" type="Node2D"]
+[node name="textadventure" type="Node2D"]

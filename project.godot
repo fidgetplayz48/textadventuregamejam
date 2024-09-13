@@ -12,13 +12,21 @@ config_version=5
 
 config/name="text adventure"
 config/description="hi"
-config/version="hi"
+config/version="-√2"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="textadventure-f48"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://graphics/splashing my shit rn.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+config/icon="res://graphics/splashing my shit rn.png"
 boot_splash/minimum_display_time=100
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
 
 [rendering]
 
