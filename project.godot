@@ -11,9 +11,22 @@ config_version=5
 [application]
 
 config/name="text adventure"
+config/description="hi"
+config/version="hi"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://graphics/splashing my shit rn.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/minimum_display_time=100
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/ssao/quality=0
+environment/ssil/quality=0
+environment/glow/upscale_mode=0
+environment/volumetric_fog/use_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
