@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cf0dbku0qc48l"]
 
 [ext_resource type="FontFile" uid="uid://b6kihnueyk8x8" path="res://font/consola.ttf" id="1_0wroq"]
-[ext_resource type="Script" path="res://branches/message_enter.gd" id="2_f31kq"]
+[ext_resource type="Script" path="res://scripts/message_enter.gd" id="2_f31kq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5oxs"]
 

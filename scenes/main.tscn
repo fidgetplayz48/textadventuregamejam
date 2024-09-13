@@ -9,6 +9,7 @@
 [node name="messageenterprefix" parent="." instance=ExtResource("1_rmy5g")]
 
 [node name="message enter" parent="." instance=ExtResource("2_iwcdp")]
+caret_blink_interval = 0.7
 
 [node name="textdisplay" parent="." instance=ExtResource("3_nyod6")]
 
