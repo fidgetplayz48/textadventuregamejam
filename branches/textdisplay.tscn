@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7s1i4endmi6n"]
+[gd_scene load_steps=10 format=3 uid="uid://b7s1i4endmi6n"]
 
 [ext_resource type="FontFile" uid="uid://b6kihnueyk8x8" path="res://font/consola.ttf" id="1_c75h0"]
 [ext_resource type="FontFile" uid="uid://cn8ruasoji84d" path="res://font/consolai.ttf" id="2_6iq0u"]
 [ext_resource type="FontFile" uid="uid://cu1hessgtg3nn" path="res://font/consolaz.ttf" id="3_n0ya7"]
 [ext_resource type="FontFile" uid="uid://c1c6rr28xy14k" path="res://font/consolab.ttf" id="4_svi3a"]
+[ext_resource type="Script" path="res://scripts/textdisplay.gd" id="5_q7vw1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efhrv"]
 
@@ -40,4 +41,5 @@ bbcode_enabled = true
 text = "hello this is a test things. thing.ok?"
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+script = ExtResource("5_q7vw1")
 metadata/_edit_use_anchors_ = true
