@@ -1,4 +1,5 @@
-extends Node
+extends LineEdit
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,4 +11,9 @@ func _process(delta: float) -> void:
 
 func _on_text_submitted(new_text: String) -> void:
 	var command = new_text.split(' ')[0]
-	var target = " ".join(new_text.split(" ").slice(1))
+	var target = new_text.split(" ").slice(1)
+	self.text = ""
+	if command == "view":
+		print('view') # Something so it doesn't display an error. remove later
+		# add view to the screen
+	#Pseudocode: if command=="examine" && room.contains(target): print(description[target])
