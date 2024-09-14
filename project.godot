@@ -24,6 +24,10 @@ boot_splash/use_filter=false
 config/icon="res://graphics/splashing my shit rn.png"
 boot_splash/minimum_display_time=100
 
+[autoload]
+
+textres="*res://scripts/text_resource.gd"
+
 [display]
 
 window/size/viewport_width=800
