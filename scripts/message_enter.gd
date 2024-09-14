@@ -1,19 +1,30 @@
 extends LineEdit
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var bannedLetters = ["a"]
+#other nodes
+@onready var textDisplay = $"../textdisplay"
+@onready var soundSys = $"../generalSoundPlayer"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _ready() -> void:
+	pass
 func _process(delta: float) -> void:
 	pass
+
+func _on_text_changed(new_text: String) -> void:
+	for letter in bannedLetters: #look for each letter in bannedLetters
+		if letter in text:
+			soundSys.playSound("error")
+			var caretPos = caret_column #when reseting the text, save caret pos
+			text = text.replace(letter,"")
+			caret_column = caretPos #load caret pos so it doesnt fuck up eehehh
 
 func _on_text_submitted(new_text: String) -> void:
 	var command = new_text.split(' ')[0]
 	var target = new_text.split(" ").slice(1)
+	soundSys.playSound("enter")
 	text = ""
 	if command == "credits":
-		$"../textdisplay".attach(command, textres.dialogue["txt_credits"])
+		textDisplay.attach(command, textres.dialogue["txt_credits"])
 	
 	if command == "view":
 		print('view') # Something so it doesn't display an error. remove later

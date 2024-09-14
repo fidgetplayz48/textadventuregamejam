@@ -1,17 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://t147xpdu3mku"]
+[gd_scene load_steps=7 format=3 uid="uid://t147xpdu3mku"]
 
 [ext_resource type="PackedScene" uid="uid://xn177w5ceh24" path="res://branches/messageenterprefix.tscn" id="1_rmy5g"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_xqnip"]
 [ext_resource type="PackedScene" uid="uid://cf0dbku0qc48l" path="res://branches/message_enter.tscn" id="2_iwcdp"]
 [ext_resource type="PackedScene" uid="uid://b7s1i4endmi6n" path="res://branches/textdisplay.tscn" id="3_nyod6"]
+[ext_resource type="PackedScene" uid="uid://dj1cujif0q7q1" path="res://branches/general_sound_player.tscn" id="4_wj2c3"]
+[ext_resource type="PackedScene" uid="uid://bxd5yeylygfi1" path="res://branches/ambience_system.tscn" id="5_j2p38"]
 
 [node name="textadventure" type="Node2D"]
+script = ExtResource("1_xqnip")
 
 [node name="messageenterprefix" parent="." instance=ExtResource("1_rmy5g")]
 
 [node name="message enter" parent="." instance=ExtResource("2_iwcdp")]
+theme_override_colors/font_placeholder_color = Color(0, 0.501961, 0.00392157, 1)
 caret_blink_interval = 0.7
 
 [node name="textdisplay" parent="." instance=ExtResource("3_nyod6")]
 text = "PLACEHOLDER!!!"
 
+[node name="generalSoundPlayer" parent="." instance=ExtResource("4_wj2c3")]
+mix_target = 2
+
+[node name="ambienceSystem" parent="." instance=ExtResource("5_j2p38")]
+
+[connection signal="text_changed" from="message enter" to="message enter" method="_on_text_changed"]
 [connection signal="text_submitted" from="message enter" to="message enter" method="_on_text_submitted"]
