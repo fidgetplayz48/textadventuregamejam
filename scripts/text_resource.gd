@@ -11,6 +11,6 @@ var dialogue : Dictionary = {
 	
 	"txt1_intro":"After waking up, you are inside of a room-temperature room, that smells and looks exactly like a room. From this, you conclude that you are in a room.\n\nYou notice that there's something within your [b][color=cyan]view[/color][/b], however, you can't quite make out what it is.",
 	"txt1_search":"YOU ARE SEARCHINg",
-	"txt1_eat":"You ate the pizza that was on the table. You notice the walls behind and to the right of you dissapering, you are now able to move through them.",
+	"txt1_eat":"You ate the pizza that was on the table. You notice the walls behind and to the right of you disappearing, you are now able to move through them.",
 	"txt1_eatfail":"Theres nothing left to eat."
 }
