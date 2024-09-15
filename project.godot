@@ -22,7 +22,7 @@ boot_splash/image="res://graphics/splashing my shit rn.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://graphics/splashing my shit rn.png"
-boot_splash/minimum_display_time=100
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
@@ -32,6 +32,7 @@ textres="*res://scripts/text_resource.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
+window/stretch/mode="viewport"
 
 [input]
 

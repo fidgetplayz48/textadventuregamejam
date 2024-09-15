@@ -18,6 +18,7 @@ caret_blink_interval = 0.7
 
 [node name="textdisplay" parent="." instance=ExtResource("3_nyod6")]
 text = "PLACEHOLDER!!!"
+scroll_following = true
 
 [node name="generalSoundPlayer" parent="." instance=ExtResource("4_wj2c3")]
 mix_target = 2
