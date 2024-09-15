@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://t147xpdu3mku"]
+[gd_scene load_steps=9 format=3 uid="uid://t147xpdu3mku"]
 
 [ext_resource type="PackedScene" uid="uid://xn177w5ceh24" path="res://branches/messageenterprefix.tscn" id="1_rmy5g"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_xqnip"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7s1i4endmi6n" path="res://branches/textdisplay.tscn" id="3_nyod6"]
 [ext_resource type="PackedScene" uid="uid://dj1cujif0q7q1" path="res://branches/general_sound_player.tscn" id="4_wj2c3"]
 [ext_resource type="PackedScene" uid="uid://bxd5yeylygfi1" path="res://branches/ambience_system.tscn" id="5_j2p38"]
+[ext_resource type="AudioStream" uid="uid://dx0w1l4cy4ur" path="res://ambience/fadingscary.wav" id="7_866fl"]
 [ext_resource type="PackedScene" uid="uid://ne0pbb38pi0m" path="res://scenes/view.tscn" id="7_vaxok"]
 
 [node name="textadventure" type="Node2D"]
@@ -25,6 +26,11 @@ scroll_following = true
 mix_target = 2
 
 [node name="ambienceSystem" parent="." instance=ExtResource("5_j2p38")]
+stream = ExtResource("7_866fl")
+pitch_scale = 1.90064
+autoplay = true
+mix_target = 2
+distIntensity = 0.01
 
 [node name="view" parent="." instance=ExtResource("7_vaxok")]
 position = Vector2(400, 300)

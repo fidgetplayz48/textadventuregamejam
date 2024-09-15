@@ -3,4 +3,6 @@
 [ext_resource type="Script" path="res://branches/ambience_system.gd" id="1_bot75"]
 
 [node name="ambienceSystem" type="AudioStreamPlayer"]
+pitch_scale = 1.72266
 script = ExtResource("1_bot75")
+distIntensity = null

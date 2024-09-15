@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ne0pbb38pi0m"]
+[gd_scene load_steps=14 format=3 uid="uid://ne0pbb38pi0m"]
 
 [ext_resource type="Texture2D" uid="uid://dh3c8rbq7tg4i" path="res://graphics/viewbase.png" id="1_7gf0n"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="1_gsi74"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bq85kmks6hecl" path="res://graphics/barricadeR.png" id="6_7efqj"]
 [ext_resource type="Texture2D" uid="uid://cefcgsw1levlo" path="res://graphics/doorF.png" id="7_b0gl4"]
 [ext_resource type="Texture2D" uid="uid://cy8gmbuqcgwv5" path="res://graphics/barricadeF.png" id="8_2iv2s"]
+[ext_resource type="Texture2D" uid="uid://dts4bwwiyuivi" path="res://graphics/table.png" id="9_5j1eb"]
+[ext_resource type="Texture2D" uid="uid://brelk711xph6i" path="res://graphics/pizza.png" id="10_p6ar0"]
+[ext_resource type="Texture2D" uid="uid://duxrk4j50scd3" path="res://graphics/box.png" id="11_aysew"]
+[ext_resource type="Texture2D" uid="uid://btcqncds44jx0" path="res://graphics/boxFloor.png" id="12_41u6k"]
+[ext_resource type="Texture2D" uid="uid://bfqnf5xmob4qs" path="res://graphics/sign.png" id="13_oulei"]
 
 [node name="view" type="Node2D"]
 script = ExtResource("1_gsi74")
@@ -32,5 +37,20 @@ texture = ExtResource("7_b0gl4")
 
 [node name="barricadeF" type="Sprite2D" parent="doorF"]
 texture = ExtResource("8_2iv2s")
+
+[node name="table" type="Sprite2D" parent="."]
+texture = ExtResource("9_5j1eb")
+
+[node name="pizza" type="Sprite2D" parent="."]
+texture = ExtResource("10_p6ar0")
+
+[node name="box" type="Sprite2D" parent="."]
+texture = ExtResource("11_aysew")
+
+[node name="boxFloor" type="Sprite2D" parent="."]
+texture = ExtResource("12_41u6k")
+
+[node name="sign" type="Sprite2D" parent="."]
+texture = ExtResource("13_oulei")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
