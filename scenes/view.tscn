@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ne0pbb38pi0m"]
+[gd_scene load_steps=16 format=3 uid="uid://ne0pbb38pi0m"]
 
 [ext_resource type="Texture2D" uid="uid://dh3c8rbq7tg4i" path="res://graphics/viewbase.png" id="1_7gf0n"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="1_gsi74"]
@@ -13,9 +13,26 @@
 [ext_resource type="Texture2D" uid="uid://duxrk4j50scd3" path="res://graphics/box.png" id="11_aysew"]
 [ext_resource type="Texture2D" uid="uid://btcqncds44jx0" path="res://graphics/boxFloor.png" id="12_41u6k"]
 [ext_resource type="Texture2D" uid="uid://bfqnf5xmob4qs" path="res://graphics/sign.png" id="13_oulei"]
+[ext_resource type="Texture2D" uid="uid://0eme11u2utvf" path="res://graphics/viewhacker.png" id="14_0lb1p"]
+[ext_resource type="PackedScene" uid="uid://bmogdywtlcytx" path="res://branches/compass.tscn" id="15_mwhkd"]
 
 [node name="view" type="Node2D"]
 script = ExtResource("1_gsi74")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 170.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+color = Color(0, 0, 0, 1)
 
 [node name="base" type="Sprite2D" parent="."]
 texture = ExtResource("1_7gf0n")
@@ -52,5 +69,12 @@ texture = ExtResource("12_41u6k")
 
 [node name="sign" type="Sprite2D" parent="."]
 texture = ExtResource("13_oulei")
+
+[node name="evil" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("14_0lb1p")
+
+[node name="compass" parent="." instance=ExtResource("15_mwhkd")]
+position = Vector2(0, -112)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

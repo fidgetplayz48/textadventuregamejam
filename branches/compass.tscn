@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmogdywtlcytx"]
+
+[ext_resource type="Texture2D" uid="uid://rrbvi8jr1m1d" path="res://graphics/compass.png" id="1_pdcuq"]
+[ext_resource type="Texture2D" uid="uid://h4w0ul1rdf85" path="res://graphics/compassDU.png" id="2_4exnn"]
+[ext_resource type="Texture2D" uid="uid://daj3gvibc3vre" path="res://graphics/compassDR.png" id="3_gt124"]
+[ext_resource type="Texture2D" uid="uid://dquhe63amrhgr" path="res://graphics/compassDD.png" id="4_gnewx"]
+[ext_resource type="Texture2D" uid="uid://da0soh3r6pikv" path="res://graphics/compassDL.png" id="5_jkngg"]
+
+[node name="compass" type="Node2D"]
+
+[node name="compassbase" type="Sprite2D" parent="."]
+texture = ExtResource("1_pdcuq")
+
+[node name="doorNorth" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_4exnn")
+
+[node name="doorWest" type="Sprite2D" parent="."]
+texture = ExtResource("3_gt124")
+
+[node name="doorSouth" type="Sprite2D" parent="."]
+texture = ExtResource("4_gnewx")
+
+[node name="doorEast" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_jkngg")
