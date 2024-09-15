@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmogdywtlcytx"]
+[gd_scene load_steps=7 format=3 uid="uid://bmogdywtlcytx"]
 
+[ext_resource type="Script" path="res://scripts/compass.gd" id="1_e8nf6"]
 [ext_resource type="Texture2D" uid="uid://rrbvi8jr1m1d" path="res://graphics/compass.png" id="1_pdcuq"]
 [ext_resource type="Texture2D" uid="uid://h4w0ul1rdf85" path="res://graphics/compassDU.png" id="2_4exnn"]
 [ext_resource type="Texture2D" uid="uid://daj3gvibc3vre" path="res://graphics/compassDR.png" id="3_gt124"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://da0soh3r6pikv" path="res://graphics/compassDL.png" id="5_jkngg"]
 
 [node name="compass" type="Node2D"]
+script = ExtResource("1_e8nf6")
 
 [node name="compassbase" type="Sprite2D" parent="."]
 texture = ExtResource("1_pdcuq")

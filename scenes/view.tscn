@@ -65,9 +65,11 @@ texture = ExtResource("10_p6ar0")
 texture = ExtResource("11_aysew")
 
 [node name="boxFloor" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("12_41u6k")
 
 [node name="sign" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("13_oulei")
 
 [node name="evil" type="Sprite2D" parent="."]
