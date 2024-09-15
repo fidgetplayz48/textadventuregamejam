@@ -4,6 +4,9 @@ var dialogue : Dictionary = {
 	"errorchar":"[color=red]Invalid character.[/color]",
 	"errorcmd":"[color=red]Invalid command.[/color]",
 	"errormove":"[color=red]Illegal move.[/color]",
+	"errorview":"[color=red]Cannot execute while [color=#00FFFF]'view'[/color] is enabled.[/color]",
+	
+	"infoview":"[color=#00FFFF]View toggled.[/color]",
 	
 	"txt_credits":"A Game made by RubyPiec and Fidgety48",
 	"txt_whatEat":"You open your mouth, to get ready to feast on......?",

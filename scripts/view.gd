@@ -46,11 +46,6 @@ func _update():
 			objList[obj].visible=true #show all appropriate things
 			if obj == "table":
 				hasTable = true
-		elif obj not in objects:
-			if hasTable:
-				$box.visible = true
-			else:
-				$box.visible = false
 
 	for door in objList.keys():
 		if door.left(1) in paths:

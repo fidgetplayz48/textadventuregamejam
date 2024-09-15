@@ -32,6 +32,7 @@ mix_target = 2
 distIntensity = 0.01
 
 [node name="view" parent="." instance=ExtResource("7_vaxok")]
+visible = false
 position = Vector2(400, 300)
 
 [connection signal="text_changed" from="message enter" to="message enter" method="_on_text_changed"]

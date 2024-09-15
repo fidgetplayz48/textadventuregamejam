@@ -2,6 +2,8 @@ extends LineEdit
 
 var bannedLetters = [""]
 
+var viewing = false
+
 var directions = {
 	"down":"d","south":"d","backwards":"d","backward":"d","stern":"d",
 	"up":"u","north":"u","forwards":"u","forward":"u","bow":"u",
@@ -61,8 +63,15 @@ func _on_text_submitted(new_text: String) -> void:
 		return
 	
 	if command == "view":
-		print('view') # Something so it doesn't display an error. remove later
-		# add view to the screen
+		viewing = !viewing
+		textDisplay.attach(textres.dialogue["infoview"])
+		soundSys.playSound("info")
+		$"../view".visible = viewing
+		return
+
+	if viewing:
+		textDisplay.attach(textres.dialogue["errorview"], new_text)
+		return
 
 	if command in ["examine", "search", "look", "inspect"]:
 		if target.size()>0:
