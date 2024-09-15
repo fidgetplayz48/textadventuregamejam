@@ -17,6 +17,6 @@ var dialogue : Dictionary = {
 	"txt1_examineempty": "Okay, let's be real here. The only way you could've found this is by finding the code of the game somewhere.",
 	
 	"txt2_intro": "You enter the second room, there appears to be a sign on the door you just entered from.",
-	"txt2_search": "You look around. Guess what you found! Nothing. Why is this a room anyway? Why waste so much space of this house on this empty room? All this contains is a door leading back to the place you just came from, and a sign on it. There is no reason for this room to have been built.",
+	"txt2_search": "You look around. a sign... like i said. Why is this a room anyway? Why waste so much space of this house on this empty room? All this contains is a door leading back to the place you just came from, and a sign on it. There is no reason for this room to have been built.",
 	"txt2_examinesign": "The sign reads 'My room. NO STEALING'. Uh oh."
 }

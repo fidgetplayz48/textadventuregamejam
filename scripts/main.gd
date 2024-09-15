@@ -8,7 +8,7 @@ var playerLoc = [0,0] # Spawns the player at 0,0 (x,y). x=0 y=0 at topleft
 # canGo - decides what directions the player can go, "r"-right,"u"-up,"d"-down,"l"-left
 # objects - defines the objects in the room
 var map = [ 
-	[{"canGo":[],"objects":["pizza","table"],"barricades":["r"]},{"canGo":["l","r"],"objects":["sign"],"barricades":[""]},{},{}],
+	[{"canGo":[],"objects":["pizza","table"],"barricades":["r"]},{"canGo":["l"],"objects":["sign"],"barricades":["r"]},{},{}],
 	[{},{},{},{}],
 	[{},{},{},{}],
 	[{},{},{},{}]
@@ -27,9 +27,12 @@ func removeObject(objToRemove: String):
 
 func openWalls(wallsToRemove: Array):
 	var canGo = map[playerLoc[1]][playerLoc[0]]["canGo"]
+	var barricades = map[playerLoc[1]][playerLoc[0]]["barricades"]
 	for wall in wallsToRemove:
 		if wall not in canGo:
 			canGo.append(wall)
+			if wall in barricades:
+				barricades.erase(wall)
 
 func get_objects_in_current_room():
 	var objects = map[playerLoc[1]][playerLoc[0]]["objects"]

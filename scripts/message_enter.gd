@@ -122,14 +122,3 @@ func _on_text_submitted(new_text: String) -> void:
 
 	$"../textdisplay".attach(textres.dialogue["errorcmd"])
 	soundSys.playSound("error")
-
-func strip_bbcode(text: String) -> String:
-	var result = text
-	var open_bracket = result.find("[")
-	while open_bracket != -1:
-		var close_bracket = result.find("]", open_bracket)
-		if close_bracket == -1:
-			break
-		result = result.substr(0, open_bracket) + result.substr(close_bracket + 1)
-		open_bracket = result.find("[")
-	return result

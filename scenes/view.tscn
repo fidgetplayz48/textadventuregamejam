@@ -41,18 +41,21 @@ texture = ExtResource("1_7gf0n")
 texture = ExtResource("3_ca2ht")
 
 [node name="barricadeL" type="Sprite2D" parent="doorL"]
+visible = false
 texture = ExtResource("4_cg73p")
 
 [node name="doorR" type="Sprite2D" parent="."]
 texture = ExtResource("5_hamnp")
 
 [node name="barricadeR" type="Sprite2D" parent="doorR"]
+visible = false
 texture = ExtResource("6_7efqj")
 
 [node name="doorF" type="Sprite2D" parent="."]
 texture = ExtResource("7_b0gl4")
 
 [node name="barricadeF" type="Sprite2D" parent="doorF"]
+visible = false
 texture = ExtResource("8_2iv2s")
 
 [node name="table" type="Sprite2D" parent="."]
@@ -65,15 +68,12 @@ texture = ExtResource("10_p6ar0")
 texture = ExtResource("11_aysew")
 
 [node name="boxFloor" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("12_41u6k")
 
 [node name="sign" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("13_oulei")
 
 [node name="evil" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("14_0lb1p")
 
 [node name="compass" parent="." instance=ExtResource("15_mwhkd")]

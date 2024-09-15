@@ -1,11 +1,18 @@
 extends Node2D
 
+@onready var cor = {
+	"u":$doorNorth,
+	"d":$doorSouth,
+	"l":$doorEast,
+	"r":$doorWest,
+}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func update(mainNode):
+	for node in get_children():
+		if node is Sprite2D:
+			if node.name != "compassbase":
+				node.visible = false
+	var canGo = mainNode.map[mainNode.playerLoc[1]][mainNode.playerLoc[0]]["canGo"]
+	for dir in cor.keys():
+		if dir in canGo:
+			cor[dir].visible=true
