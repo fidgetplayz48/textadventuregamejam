@@ -30,4 +30,14 @@ func openWalls(wallsToRemove: Array):
 	for wall in wallsToRemove:
 		if wall not in canGo:
 			canGo.append(wall)
-			
+
+func get_objects_in_current_room():
+	var objects = map[playerLoc[1]][playerLoc[0]]["objects"]
+	return objects
+
+func get_room_by_id(room_id) -> Variant:
+	for row in range(mapIDs.size()):
+		for col in range(mapIDs[row].size()):
+			if mapIDs[row][col] == room_id:
+				return map[row][col] # Return the corresponding room from map
+	return

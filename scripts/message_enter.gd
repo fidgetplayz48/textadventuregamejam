@@ -54,7 +54,7 @@ func _on_text_submitted(new_text: String) -> void:
 	if command == "credits":
 		textDisplay.attach(textres.dialogue["txt_credits"], command)
 		return
-	
+	#TODO fix bbcode leaking
 	if command == "print": #fun
 		var printed = new_text.erase(0, command.length()).strip_edges()
 		textDisplay.attach(printed, new_text)
@@ -82,12 +82,12 @@ func _on_text_submitted(new_text: String) -> void:
 		if target.size() == 0:
 			textDisplay.attach(textres.dialogue["txt_whatEat"], new_text)
 			return
-		if "empty" in get_room_by_id(roomNum)["objects"]:
+		if "empty" in mainNode.get_room_by_id(roomNum)["objects"]:
 			textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_eatfail"], new_text)
 			return
 		if target.size()>0:
 			if "pizza" in target:
-				if "pizza" in get_room_by_id(roomNum)["objects"]:
+				if "pizza" in mainNode.get_room_by_id(roomNum)["objects"]:
 					mainNode.removeObject("pizza")
 					mainNode.openWalls(["r"])
 					textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_eat"], new_text)
@@ -99,7 +99,6 @@ func _on_text_submitted(new_text: String) -> void:
 	
 	if command in ["inventory","items","supply","stock","reserve","purse"]: #inventory access
 		print(new_text)
-	#Movement: TODO optimize with array for directions n stuff
 
 	if command in ["move","go","proceed","walk","advance"]:
 		print(mainNode.map)
@@ -123,13 +122,6 @@ func _on_text_submitted(new_text: String) -> void:
 
 	$"../textdisplay".attach(textres.dialogue["errorcmd"])
 	soundSys.playSound("error")
-	
-func get_room_by_id(room_id) -> Variant:
-	for row in range(mainNode.mapIDs.size()):
-		for col in range(mainNode.mapIDs[row].size()):
-			if mainNode.mapIDs[row][col] == room_id:
-				return mainNode.map[row][col] # Return the corresponding room from map
-	return
 
 func strip_bbcode(text: String) -> String:
 	var result = text
