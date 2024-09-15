@@ -43,12 +43,17 @@ func _on_text_submitted(new_text: String) -> void:
 		if i != "":
 			targetFixed.append(i.to_lower())
 	target = targetFixed #apply white space removal
+	var currentItem = ""
+	for i in target:
+		if i in currentTile.objects:
+			currentItem = i # Makes it so the last item typed is the one you interact with
 	
 	soundSys.playSound("enter")
 	text = ""
 	var roomNum = mainNode.mapIDs[mainNode.playerLoc[1]][mainNode.playerLoc[0]]
 	if command == "credits":
 		textDisplay.attach(textres.dialogue["txt_credits"], command)
+		return
 	
 	if command == "print": #fun
 		var printed = new_text.erase(0, command.length()).strip_edges()
@@ -60,11 +65,18 @@ func _on_text_submitted(new_text: String) -> void:
 		# add view to the screen
 
 	if command in ["examine", "search", "look", "inspect"]:
-		#if target.size()>0:
-		textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_search"], new_text) #returns room number
+		if target.size()>0:
+			if currentItem in currentTile.objects: # always true if there is an item, probably fix this later
+				textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_examine" + currentItem], new_text)
+			else: 
+				textDisplay.attach(textres.dialogue["txt_invalidFood"], new_text)
+		else:
+			textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_search"], new_text) #returns room number
+		return
 		
 	if command in ["use", "utilize", "operate", "wield"]: #general use
 		print(new_text)
+		return
 		
 	if command in ["consume", "eat", "devour", "swallow", "munch"]: #food/edible
 		if target.size() == 0:
@@ -77,7 +89,7 @@ func _on_text_submitted(new_text: String) -> void:
 			if "pizza" in target:
 				if "pizza" in get_room_by_id(roomNum)["objects"]:
 					mainNode.removeObject("pizza")
-					mainNode.openWalls(["r","d"])
+					mainNode.openWalls(["r"])
 					textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_eat"], new_text)
 					return
 			#put elifs for each food here
@@ -98,14 +110,11 @@ func _on_text_submitted(new_text: String) -> void:
 			return
 		for i in directions.keys():
 			if i in target:
-				moveDir = directions[directions[i]]
-			else:
-				textDisplay.attach(textres.dialogue["errormove"])
-				soundSys.playSound("error")
-				return
+				moveDir = directions[i]
 		if(currentTile["canGo"].has(moveDir)):
 			mainNode.playerLoc[0]+=dirAddition[moveDir][0] #moves depending on directories defined at the top
 			mainNode.playerLoc[1]+=dirAddition[moveDir][1] 
+			$"../textdisplay".attach(textres.dialogue["txt"+str(mainNode.playerLoc[0]+mainNode.playerLoc[1]*4+1)+"_intro"], new_text) # posts the intro to the next room
 			return
 		else:
 			textDisplay.attach(textres.dialogue["errormove"])
