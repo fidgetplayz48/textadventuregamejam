@@ -16,9 +16,11 @@ visible = false
 texture = ExtResource("2_4exnn")
 
 [node name="doorWest" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_gt124")
 
 [node name="doorSouth" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("4_gnewx")
 
 [node name="doorEast" type="Sprite2D" parent="."]
