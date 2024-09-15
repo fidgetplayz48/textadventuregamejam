@@ -30,5 +30,4 @@ func openWalls(wallsToRemove: Array):
 	for wall in wallsToRemove:
 		if wall not in canGo:
 			canGo.append(wall)
-			print(map)
 			

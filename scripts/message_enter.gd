@@ -1,6 +1,19 @@
 extends LineEdit
 
 var bannedLetters = [""]
+
+var directions = {
+	"down":"d","south":"d","backwards":"d","backward":"d","stern":"d",
+	"up":"u","north":"u","forwards":"u","forward":"u","bow":"u",
+	"left":"l","west":"l","leftwards":"l","leftward":"l","port":"l",
+	"right":"r","east":"r","rightwards":"r","rightward":"r","starboard":"r",
+}
+var dirAddition = {
+	"d":[0,1],
+	"u":[0,-1],
+	"l":[-1,0],
+	"r":[1,0],
+}
 #other nodes
 @onready var textDisplay = $"../textdisplay"
 @onready var soundSys = $"../generalSoundPlayer"
@@ -37,6 +50,11 @@ func _on_text_submitted(new_text: String) -> void:
 	if command == "credits":
 		textDisplay.attach(textres.dialogue["txt_credits"], command)
 	
+	if command == "print": #fun
+		var printed = new_text.erase(0, command.length()).strip_edges()
+		textDisplay.attach(printed, new_text)
+		return
+	
 	if command == "view":
 		print('view') # Something so it doesn't display an error. remove later
 		# add view to the screen
@@ -70,33 +88,24 @@ func _on_text_submitted(new_text: String) -> void:
 	if command in ["inventory","items","supply","stock","reserve","purse"]: #inventory access
 		print(new_text)
 	#Movement: TODO optimize with array for directions n stuff
-	if command in ["down","south"]:
-		if(currentTile["canGo"].has("d")):
-			mainNode.playerLoc[1]+=1 #Adds 1 to the player's y, moving them down
-			return
-		else:
+
+	if command in ["move","go","proceed","walk","advance"]:
+		print(mainNode.map)
+		var moveDir = null
+		if target.size()<=0:
 			textDisplay.attach(textres.dialogue["errormove"])
 			soundSys.playSound("error")
 			return
-	elif command in ["up","north"]:
-		if(currentTile["canGo"].has("u")):
-			mainNode.playerLoc[1]-=1 #ditto, but opposite
-			return
-		else:
-			textDisplay.attach(textres.dialogue["errormove"])
-			soundSys.playSound("error")
-			return
-	elif command in ["right","east"]:
-		if(currentTile["canGo"].has("r")):
-			mainNode.playerLoc[0]+=1 #ditto but moves right instead on x axis
-			return
-		else:
-			textDisplay.attach(textres.dialogue["errormove"])
-			soundSys.playSound("error")
-			return
-	elif command in ["left","west"]:
-		if(currentTile["canGo"].has("l")):
-			mainNode.playerLoc[0]-=1 #ditto, but opposite
+		for i in directions.keys():
+			if i in target:
+				moveDir = directions[directions[i]]
+			else:
+				textDisplay.attach(textres.dialogue["errormove"])
+				soundSys.playSound("error")
+				return
+		if(currentTile["canGo"].has(moveDir)):
+			mainNode.playerLoc[0]+=dirAddition[moveDir][0] #moves depending on directories defined at the top
+			mainNode.playerLoc[1]+=dirAddition[moveDir][1] 
 			return
 		else:
 			textDisplay.attach(textres.dialogue["errormove"])
@@ -106,9 +115,20 @@ func _on_text_submitted(new_text: String) -> void:
 	$"../textdisplay".attach(textres.dialogue["errorcmd"])
 	soundSys.playSound("error")
 	
-func get_room_by_id(room_id):
+func get_room_by_id(room_id) -> Variant:
 	for row in range(mainNode.mapIDs.size()):
 		for col in range(mainNode.mapIDs[row].size()):
 			if mainNode.mapIDs[row][col] == room_id:
 				return mainNode.map[row][col] # Return the corresponding room from map
 	return
+
+func strip_bbcode(text: String) -> String:
+	var result = text
+	var open_bracket = result.find("[")
+	while open_bracket != -1:
+		var close_bracket = result.find("]", open_bracket)
+		if close_bracket == -1:
+			break
+		result = result.substr(0, open_bracket) + result.substr(close_bracket + 1)
+		open_bracket = result.find("[")
+	return result
