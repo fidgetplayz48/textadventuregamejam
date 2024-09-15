@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://ne0pbb38pi0m"]
+[gd_scene load_steps=2 format=3 uid="uid://ne0pbb38pi0m"]
+
+[ext_resource type="Texture2D" uid="uid://dh3c8rbq7tg4i" path="res://graphics/viewbase.png" id="1_7gf0n"]
 
 [node name="view" type="Node2D"]
+
+[node name="base" type="Sprite2D" parent="."]
+texture = ExtResource("1_7gf0n")
