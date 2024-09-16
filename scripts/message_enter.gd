@@ -84,8 +84,23 @@ func _on_text_submitted(new_text: String) -> void:
 		return
 		
 	if command in ["use", "utilize", "operate", "wield"]: #general use
-		print(new_text)
-		return
+		if target.size() == 0:
+			textDisplay.attach(textres.dialogue["txt_whatUse"], new_text)
+			return
+		if "empty" in mainNode.get_room_by_id(roomNum)["objects"]:
+			textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_usefail"], new_text)
+			return
+		if target.size()>0:
+			if "pizza" in target:
+				if "pizza" in mainNode.get_room_by_id(roomNum)["objects"]:
+					mainNode.removeObject("pizza")
+					mainNode.openWalls(["r"])
+					textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_eat"], new_text)
+					return
+			#put elifs for each food here
+			else:
+				textDisplay.attach(textres.dialogue["txt_invalidFood"], new_text)
+				return
 		
 	if command in ["consume", "eat", "devour", "swallow", "munch"]: #food/edible
 		if target.size() == 0:

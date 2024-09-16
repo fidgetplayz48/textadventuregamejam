@@ -13,13 +13,13 @@ var isReady = false
 	"ldoor":$doorL,
 	"rdoor":$doorR,
 	"udoor":$doorF,
+	"letter":$letter,
+	"furnace":$furnace,
+	"painting":$painting
 }
 
 func _ready():
 	isReady = true
-
-func _process(delta: float) -> void:
-	_update()
 
 func _on_visibility_changed() -> void:
 	if !isReady:

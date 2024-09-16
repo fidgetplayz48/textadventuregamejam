@@ -27,7 +27,7 @@ mix_target = 2
 
 [node name="ambienceSystem" parent="." instance=ExtResource("5_j2p38")]
 stream = ExtResource("7_866fl")
-pitch_scale = 0.319095
+pitch_scale = 2.09618
 mix_target = 2
 distIntensity = 0.01
 

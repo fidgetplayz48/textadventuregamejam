@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ne0pbb38pi0m"]
+[gd_scene load_steps=19 format=3 uid="uid://ne0pbb38pi0m"]
 
 [ext_resource type="Texture2D" uid="uid://dh3c8rbq7tg4i" path="res://graphics/viewbase.png" id="1_7gf0n"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="1_gsi74"]
@@ -10,9 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cy8gmbuqcgwv5" path="res://graphics/barricadeF.png" id="8_2iv2s"]
 [ext_resource type="Texture2D" uid="uid://dts4bwwiyuivi" path="res://graphics/table.png" id="9_5j1eb"]
 [ext_resource type="Texture2D" uid="uid://brelk711xph6i" path="res://graphics/pizza.png" id="10_p6ar0"]
+[ext_resource type="Texture2D" uid="uid://cobp31wt2pt15" path="res://graphics/painting.png" id="10_yxcdl"]
+[ext_resource type="Texture2D" uid="uid://chepk2vfphqk6" path="res://graphics/furnace.png" id="11_0nydn"]
 [ext_resource type="Texture2D" uid="uid://duxrk4j50scd3" path="res://graphics/box.png" id="11_aysew"]
 [ext_resource type="Texture2D" uid="uid://btcqncds44jx0" path="res://graphics/boxFloor.png" id="12_41u6k"]
 [ext_resource type="Texture2D" uid="uid://bfqnf5xmob4qs" path="res://graphics/sign.png" id="13_oulei"]
+[ext_resource type="Texture2D" uid="uid://b8ao6inn71xms" path="res://graphics/letter.png" id="13_twsj7"]
 [ext_resource type="Texture2D" uid="uid://0eme11u2utvf" path="res://graphics/viewhacker.png" id="14_0lb1p"]
 [ext_resource type="PackedScene" uid="uid://bmogdywtlcytx" path="res://branches/compass.tscn" id="15_mwhkd"]
 
@@ -52,28 +55,45 @@ visible = false
 texture = ExtResource("6_7efqj")
 
 [node name="doorF" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("7_b0gl4")
 
 [node name="barricadeF" type="Sprite2D" parent="doorF"]
 visible = false
 texture = ExtResource("8_2iv2s")
 
-[node name="table" type="Sprite2D" parent="."]
-texture = ExtResource("9_5j1eb")
-
-[node name="pizza" type="Sprite2D" parent="."]
-texture = ExtResource("10_p6ar0")
-
-[node name="box" type="Sprite2D" parent="."]
-texture = ExtResource("11_aysew")
-
-[node name="boxFloor" type="Sprite2D" parent="."]
-texture = ExtResource("12_41u6k")
-
 [node name="sign" type="Sprite2D" parent="."]
 texture = ExtResource("13_oulei")
 
+[node name="painting" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("10_yxcdl")
+
+[node name="furnace" type="Sprite2D" parent="."]
+texture = ExtResource("11_0nydn")
+
+[node name="table" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_5j1eb")
+
+[node name="pizza" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("10_p6ar0")
+
+[node name="box" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_aysew")
+
+[node name="boxFloor" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("12_41u6k")
+
+[node name="letter" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("13_twsj7")
+
 [node name="evil" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("14_0lb1p")
 
 [node name="compass" parent="." instance=ExtResource("15_mwhkd")]

@@ -1,4 +1,3 @@
-@tool
 extends AudioStreamPlayer
 
 @export_range(0.01,1.0) var distIntensity := 0.1 ##the closer this value is to 1, the less it distorts.
