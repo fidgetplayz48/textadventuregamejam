@@ -8,10 +8,9 @@ var playerLoc = [0,0] # Spawns the player at 0,0 (x,y). x=0 y=0 at topleft
 func _process(delta: float) -> void:
 	#musicHandler
 	if $generalSoundPlayer.playing:
-		# print($music.stream.get_sync_stream(1).volume)
-		print($music.volume_db)
-	#else:
-		#$music.stream.get_sync_stream(1).volume
+		$music.stream.set_sync_stream_volume(1,-60)
+	else:
+		$music.stream.set_sync_stream_volume(1,0)
 
 # Defines the map. Quick overview of things you can put in objects:
 # canGo - decides what directions the player can go, "r"-right,"u"-up,"d"-down,"l"-left
