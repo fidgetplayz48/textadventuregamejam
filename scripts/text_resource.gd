@@ -28,7 +28,8 @@ var dialogue : Dictionary = {
 	"txt3_search": "...Whats up with that fireplace?",
 	"txt3_examinefireplace": "..!!?? There was a switch under one of the pieces of coal! With a second degree burn, you have opened up the curtain behind you.",
 	
-	"txt4_intro": "You enter the second room, there appears to be a sign on the door you just entered from.",
+	"txt4_intro": "You enter the fourth room. A Painting! How abstract. you notice nothing else.",
 	"txt4_search": "Look at that pretty painting! however, there's a barricade behind you, held together by hopes, dreams, and unfinished business",
-	"txt4_examinepainting": "The painting has an imprint! : 'what is my name?'.",
+	"txt4_examinepainting": "The painting has an imprint! : 'wH t .s  y AmE?'.",
+	"txt4_paintingsolve": "Suddenly, the wall behind you opens up! You are finally free, to leave the first row of rooms!
 }
