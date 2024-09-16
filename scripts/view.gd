@@ -17,7 +17,8 @@ var scaled = false
 	"udoor":$doorF,
 	"letter":$letter,
 	"furnace":$furnace,
-	"painting":$painting
+	"painting":$painting,
+	"egg":$egg,
 }
 
 func _ready():

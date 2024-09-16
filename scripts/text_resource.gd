@@ -35,5 +35,5 @@ var dialogue : Dictionary = {
 	
 	"txt8_intro": "After entering this room, you notice the letter 'o' exempt from your keyboard.",
 	
-	"txt9_intro": "Holy shit! an egg! thats an egg! wow! [color=#FF00FF](nothing of use in this room)[/color]",
+	"txt9_intro": "Holy shit! an egg! thats an egg! wow! [color=#800080](nothing of use in this room)[/color]",
 }
