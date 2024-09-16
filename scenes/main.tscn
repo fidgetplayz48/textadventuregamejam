@@ -46,7 +46,6 @@ position = Vector2(400, 300)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_gk3uy")
-autoplay = true
 
 [connection signal="text_changed" from="message enter" to="message enter" method="_on_text_changed"]
 [connection signal="text_submitted" from="message enter" to="message enter" method="_on_text_submitted"]
