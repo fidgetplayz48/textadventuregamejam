@@ -30,6 +30,10 @@ var dialogue : Dictionary = {
 	
 	"txt4_intro": "You enter the fourth room. A Painting! How abstract. you notice nothing else.",
 	"txt4_search": "Look at that pretty painting! however, there's a barricade behind you, held together by hopes, dreams, and unfinished business",
-	"txt4_examinepainting": "The painting has an imprint! : 'wH t .s  y AmE?'.",
+	"txt4_examinepainting": "The painting has an imprint! : 'wH t .s  m, n mE?'.",
 	"txt4_paintingsolve": "Suddenly, the wall behind you opens up! You are finally free, to leave the first row of rooms!",
+	
+	"txt8_intro": "After entering this room, you notice the letter 'o' exempt from your keyboard.",
+	
+	"txt9_intro": "Holy shit! an egg! thats an egg! wow! [color=#FF00FF](nothing of use in this room)[/color]",
 }
