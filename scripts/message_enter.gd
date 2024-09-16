@@ -53,14 +53,6 @@ func _on_text_submitted(new_text: String) -> void:
 	soundSys.playSound("enter")
 	text = ""
 	var roomNum = mainNode.mapIDs[mainNode.playerLoc[1]][mainNode.playerLoc[0]]
-	if command == "credits":
-		textDisplay.attach(textres.dialogue["txt_credits"], command)
-		return
-	#TODO fix bbcode leaking
-	if command == "print": #fun
-		var printed = new_text.erase(0, command.length()).strip_edges()
-		textDisplay.attach(printed, new_text)
-		return
 	
 	if command == "view":
 		viewing = !viewing
@@ -71,6 +63,16 @@ func _on_text_submitted(new_text: String) -> void:
 
 	if viewing:
 		textDisplay.attach(textres.dialogue["errorview"], new_text)
+		soundSys.playSound("error")
+		return
+
+	if command == "credits":
+		textDisplay.attach(textres.dialogue["txt_credits"], command)
+		return
+	#TODO fix bbcode leaking
+	if command == "print": #fun
+		var printed = new_text.erase(0, command.length()).strip_edges()
+		textDisplay.attach(printed, new_text)
 		return
 
 	if command in ["examine", "search", "look", "inspect"]:
@@ -84,23 +86,14 @@ func _on_text_submitted(new_text: String) -> void:
 		return
 		
 	if command in ["use", "utilize", "operate", "wield"]: #general use
-		if target.size() == 0:
-			textDisplay.attach(textres.dialogue["txt_whatUse"], new_text)
-			return
-		if "empty" in mainNode.get_room_by_id(roomNum)["objects"]:
-			textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_usefail"], new_text)
-			return
 		if target.size()>0:
-			if "pizza" in target:
-				if "pizza" in mainNode.get_room_by_id(roomNum)["objects"]:
-					mainNode.removeObject("pizza")
-					mainNode.openWalls(["r"])
-					textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_eat"], new_text)
-					return
-			#put elifs for each food here
-			else:
+			if currentItem in currentTile.objects: # always true if there is an item, probably fix this later
+				textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_examine" + currentItem], new_text)
+			else: 
 				textDisplay.attach(textres.dialogue["txt_invalidFood"], new_text)
-				return
+		else:
+			textDisplay.attach(textres.dialogue["txt"+str(roomNum)+"_search"], new_text) #returns room number
+		return
 		
 	if command in ["consume", "eat", "devour", "swallow", "munch"]: #food/edible
 		if target.size() == 0:

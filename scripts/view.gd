@@ -1,7 +1,9 @@
 extends Node2D
 
 @onready var mainNode = $".."
+@onready var textenter = $"../message enter"
 var isReady = false
+var scaled = false
 
 @onready var objList = {
 	"pizza":$pizza,
@@ -21,6 +23,13 @@ var isReady = false
 func _ready():
 	isReady = true
 
+func _input(event):
+	if event.is_action_pressed("entermsg"):
+		if textenter.viewing:
+			scaled = !scaled
+			_update()
+
+
 func _on_visibility_changed() -> void:
 	if !isReady:
 		return
@@ -28,6 +37,9 @@ func _on_visibility_changed() -> void:
 
 func _update():
 	var hasTable = false
+	
+	print(scaled)
+	scale = Vector2(1+int(scaled),1+int(scaled))
 	
 	$compass.update(mainNode)
 	for node in get_children():
