@@ -8,7 +8,8 @@ var playerLoc = [0,0] # Spawns the player at 0,0 (x,y). x=0 y=0 at topleft
 func _process(delta: float) -> void:
 	#musicHandler
 	if $generalSoundPlayer.playing:
-		print($music.stream.get_sync_stream(1).volume)
+		# print($music.stream.get_sync_stream(1).volume)
+		print($music.volume_db)
 	#else:
 		#$music.stream.get_sync_stream(1).volume
 
