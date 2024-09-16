@@ -26,7 +26,7 @@ var dialogue : Dictionary = {
 	
 	"txt3_intro": "You enter the next room. It feels calm. There's a curtain behind you, a fireplace infront of you",
 	"txt3_search": "...Whats up with that fireplace?",
-	"txt3_examinefireplace": "..!!?? There was a switch under one of the pieces of coal! With a second degree burn, you have opened up the curtain behind you.",
+	"txt3_examinefurnace": "..!!?? There was a switch under one of the pieces of coal! With a second degree burn, you have opened up the curtain behind you.",
 	
 	"txt4_intro": "You enter the fourth room. A Painting! How abstract. you notice nothing else.",
 	"txt4_search": "Look at that pretty painting! however, there's a barricade behind you, held together by hopes, dreams, and unfinished business",
