@@ -8,7 +8,7 @@ var playerLoc = [0,0] # Spawns the player at 0,0 (x,y). x=0 y=0 at topleft
 # canGo - decides what directions the player can go, "r"-right,"u"-up,"d"-down,"l"-left
 # objects - defines the objects in the room
 var map = [ 
-	[{"canGo":[],"objects":["pizza","table"],"barricades":["r"]},{"canGo":["l","r"],"objects":["sign","table","letter"],"barricades":[""]},{"canGo":["l","r"],"objects":["furnace"],"barricades":["d"]},{"canGo":["l","d"],"objects":["painting"],"barricades":[""]}],
+	[{"canGo":[],"objects":["pizza","table"],"barricades":["r"]},{"canGo":["l","r"],"objects":["sign","table","letter"],"barricades":[""]},{"canGo":["l","r"],"objects":["furnace"],"barricades":["d"]},{"canGo":["l"],"objects":["painting"],"barricades":[""]}],
 	[{},{},{},{}],
 	[{},{},{},{}],
 	[{},{},{},{}]
